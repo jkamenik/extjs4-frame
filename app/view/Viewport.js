@@ -3,24 +3,25 @@ Ext.define('WebUI.view.Viewport',{
   layout: 'border',
   
   requires: [
-    'WebUI.view.Header',
-    'WebUI.view.Footer'
+    'WebUI.view.layout.Header',
+    'WebUI.view.layout.Footer',
+    'WebUI.view.layout.Nav',
+    'WebUI.view.layout.Content'
   ],
   
   items: [{
-    xtype:  'page.header',
+    xtype:  'layout.header',
     region: 'north',
     height: 57
   },{
     region: 'south',
-    xtype:  'page.footer'
+    xtype:  'layout.footer'
   },{
     region: 'west',
-    split: true,
-    width: 200,
-    html: 'nav bar'
+    xtype:  'layout.nav',
+    width: 200
   },{
     region: 'center',
-    html: 'content'
+    xtype:  'layout.content'
   }]
 });
