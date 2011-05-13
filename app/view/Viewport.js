@@ -18,10 +18,10 @@ Ext.define('WebUI.view.Viewport',{
     xtype:  'layout.footer'
   },{
     region: 'west',
-    xtype:  'layout.nav',
+    xtype:  'layout-nav',
     width: 200
   },{
     region: 'center',
-    xtype:  'layout.content'
+    xtype:  'layout-content'
   }]
 });
