@@ -2,5 +2,5 @@ Ext.Loader.setConfig({enabled: true});
 Ext.application({
   name: 'WebUI',
   
-  controllers: ["Nav"]
+  controllers: ["Nav",'Interface']
 });
