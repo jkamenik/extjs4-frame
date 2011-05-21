@@ -7,16 +7,27 @@ Ext.define('WebUI.view.interface.IP',{
   columns: [{
     header: 'IP Address',
     flex: 1,
-    dataIndex: 'dotted'
+    dataIndex: 'dotted',
+    field: {xtype: 'textfield'}
   },{
     header: 'Interface',
-    flex: 2,
-    dataIndex: 'ethernet_uid'// ,
+    flex: 1,
+    dataIndex: 'ethernet_uid',
+    field: {xtype: 'numberfield'}
     //     renderer: function(value,meta,model){
     //       console.log(model.getEthernet());
     //       return value;
     //     }
   }],
+  
+  plugins: [Ext.create('Ext.grid.plugin.RowEditing',{
+    listeners: {
+      edit: function(editor){
+        // this is needed otherwise localstore doesn't save it's data
+        editor.store.sync();
+      }
+    }
+  })],
   
   dockedItems: [{
     xtype: 'toolbar',

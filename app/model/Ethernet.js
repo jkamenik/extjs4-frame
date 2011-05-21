@@ -1,13 +1,8 @@
 Ext.define('WebUI.model.Ethernet', {
   extend: 'Ext.data.Model',
   
-  hasMany: 'IP',
+  // hasMany: 'IP',
   idProperty: 'uid',
-  
-  proxy: {
-    type: 'localstorage',
-    id  : 'ethernets'
-  },
     
   fields: [
     {name: 'uid',       type: 'number'},
